@@ -1,0 +1,183 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);  font-family: Noto Sans, Helvetica, sans-serif;
+  color: #666;
+  letter-spacing: 1px;
+  min-height: 100vh;
+  font-size: 1.6rem;
+}
+
+
+header {
+  text-align: center;
+  margin: 2rem 0 1rem 0;
+
+  .links {
+    text-align: center;
+    font-size: 150%;
+    margin-top: 4rem;
+
+    .link:link,
+    .link:visited {
+      padding: 0.5rem 1rem;
+      margin: 2rem;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s;
+    }
+
+    .link:hover,
+    .link:active {
+      border-bottom: 2px solid #fff;
+    }
+  }
+}
+
+h1 {
+  text-shadow: 0 1px #808d93,
+               -1px 0 #cdd2d5,
+               -1px 2px #808d93,
+               -2px 1px #cdd2d5,
+               -2px 3px #808d93,
+               -3px 2px #cdd2d5,
+               -3px 4px #808d93,
+               -4px 3px #cdd2d5,
+               -4px 5px #808d93,
+               -5px 4px #cdd2d5,
+               -5px 6px #808d93,
+               -6px 5px #cdd2d5,
+               -6px 7px #808d93,
+               -7px 6px #cdd2d5,
+               -7px 8px #808d93,
+               -8px 7px #cdd2d5;
+  display: inline-block;
+  font-size: 200%;
+}
+
+h1,
+h2 {
+  color: #666;
+}
+
+/* ----- header css ends here ----- */
+
+/* ----- main content css starts here ----- */
+
+.add-image {
+  margin-top: 2rem;
+}
+
+.upload-form {
+  width: 60%;
+  margin: auto;
+  margin-top: 2rem;
+  padding: 2rem;
+  padding-left: 20%;
+  background: #eee;
+}
+
+.main-content {
+  width: 80%;
+  margin: auto auto 10rem auto;
+}
+
+.photos-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .photo {
+    width: 28.8rem;
+    overflow: hidden;
+    margin: 1rem;
+
+    img {
+      width: 100%;
+      height: 30rem;
+      transform: scale(1.1);
+      transition: all 1s;
+      &:hover {
+        transform: scale(1.01);
+      }
+    }
+  }
+}
+
+/* ----- main content css ends here----- */
+
+/* ----- buttons css starts here----- */
+
+button {
+  margin-right: 0.5rem;
+}
+
+.submit-btn {
+  margin-top: 2rem;
+  font-size: 1.6rem;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+/* ----- buttons css ends here ----- */
+
+/* ----- messages css starts here ----- */
+.errorMsg {
+  color: #f21e08;
+  background: #fff0f0;
+  padding: 1rem;
+}
+
+.successMsg {
+  color: #00ff00;
+  background: #077707;
+  padding: 1rem;
+}
+
+.centered-message {
+  width: 50rem;
+  margin: auto;
+}
+
+.message {
+  color: #0e1b1e;
+  font-size: 2.5rem;
+  margin-left: 1rem;
+}
+
+.loading-msg {
+  text-align: center;
+  font-size: 200%;
+  height: 20rem;
+  line-height: 20rem;
+}
+
+/* ----- messages css ends here ----- */
+
+@media only screen and (max-width: 1200px) {
+  .main-content {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  body {
+    font-size: 1.3rem;
+  }
+
+  .main-content {
+    width: 100%;
+  }
+
+  .photos-list {
+    .photo {
+      width: 80%;
+    }
+  }
+}
