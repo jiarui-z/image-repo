@@ -1,11 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
-import React, { useEffect, useState } from 'react';
-import { connect } from 'react-redux';
-import { startLoadPhotos } from '../actions/photos';
-import Photo from './Photo';
+import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
+import { startLoadPhotos } from "../actions/photos";
+import Photo from "./Photo";
 
-const Gallary = ({ errors, photos, dispatch }) => {
+const Gallery = ({ errors, photos, dispatch }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const Gallary = ({ errors, photos, dispatch }) => {
 
 const mapStateToProps = (state) => ({
   photos: state.photos || [],
-  errors: state.errors || {}
+  errors: state.errors || {},
 });
 
-export default connect(mapStateToProps)(Gallary);
+export default connect(mapStateToProps)(Gallery);

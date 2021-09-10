@@ -18,6 +18,20 @@ export const addPhoto = (photo) => {
   };
 };
 
+export const deleteImage = (id) => {
+  return async (dispatch) => {
+    try {
+      await axios.delete(`${BASE_API_URL}/images/${id}`);
+      dispatch({
+        type: 'DELETE_PHOTO',
+        payload: id
+      });
+    } catch (error) {
+      error.response && dispatch(getErrors(error.response.data));
+    }
+  };
+};
+
 export const startLoadPhotos = () => {
   return async (dispatch) => {
     try {

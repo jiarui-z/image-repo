@@ -91,6 +91,10 @@ h2 {
   flex-wrap: wrap;
   justify-content: center;
 
+  .close {
+    position: absolute;
+    right: 0;
+  }
   .photo {
     width: 28.8rem;
     overflow: hidden;
@@ -101,6 +105,7 @@ h2 {
       height: 30rem;
       transform: scale(1.1);
       transition: all 1s;
+      cursor: pointer;
       &:hover {
         transform: scale(1.01);
       }

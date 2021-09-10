@@ -5,10 +5,10 @@ const Header = () => (
   <header>
     <h1>Image Repo</h1>
     <div className="links">
-      <NavLink to="/gallery" className="link">
+      <NavLink to="/" className="link">
         gallery
       </NavLink>
-      <NavLink to="/" className="link">
+      <NavLink to="/add" className="link">
         add
       </NavLink>
     </div>

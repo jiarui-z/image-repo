@@ -60,4 +60,14 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+router.delete("/:id", async (req, res) => {
+  try {
+    await Image.deleteOne({ _id: req.params.id });
+    res.status(201).send({ _id: req.params.id });
+  } catch (error) {
+    console.log(error);
+    res.status(400).send({ delete_error: "Error while deleting image." });
+  }
+});
+
 module.exports = router;
