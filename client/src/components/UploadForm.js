@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
-import { Form, Button } from 'react-bootstrap';
-import { addPhoto } from '../actions/photos';
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
+import { Form, Button } from "react-bootstrap";
+import { addPhoto } from "../actions/photos";
 
 const UploadForm = ({ errors, dispatch }) => {
   const [photo, setPhoto] = useState(null);
@@ -13,7 +13,7 @@ const UploadForm = ({ errors, dispatch }) => {
   }, [errors]);
 
   useEffect(() => {
-    setErroMsg(''); // reset error message on page load
+    setErroMsg(""); // reset error message on page load
   }, []);
 
   const handleOnChange = (event) => {
@@ -24,7 +24,7 @@ const UploadForm = ({ errors, dispatch }) => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     if (photo) {
-      setErroMsg('');
+      setErroMsg("");
       dispatch(addPhoto(photo));
       setIsSubmitted(true);
     }
@@ -49,12 +49,17 @@ const UploadForm = ({ errors, dispatch }) => {
       >
         <Form.Group>
           <Form.Label>Choose photo to upload</Form.Label>
-          <Form.Control type="file" name="image" accept="image/jpeg" onChange={handleOnChange} />
+          <Form.Control
+            type="file"
+            name="image"
+            accept="image/jpeg"
+            onChange={handleOnChange}
+          />
         </Form.Group>
         <Button
           variant="primary"
           type="submit"
-          className={`${!photo ? 'disabled submit-btn' : 'submit-btn'}`}
+          className={`${!photo ? "disabled submit-btn" : "submit-btn"}`}
           disabled={photo ? false : true}
         >
           Upload
@@ -66,7 +71,7 @@ const UploadForm = ({ errors, dispatch }) => {
 
 const mapStateToProps = (state) => ({
   photos: state.photos || [],
-  errors: state.errors || {}
+  errors: state.errors || {},
 });
 
 export default connect(mapStateToProps)(UploadForm);

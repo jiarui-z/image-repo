@@ -1,16 +1,16 @@
-import axios from 'axios';
-import { BASE_API_URL } from '../utils/constants';
-import { getErrors } from './errors';
+import axios from "axios";
+import { BASE_API_URL } from "../utils/constants";
+import { getErrors } from "./errors";
 
 export const addPhoto = (photo) => {
   return async (dispatch) => {
     try {
       const formData = new FormData();
-      formData.append('image', photo);
+      formData.append("image", photo);
       await axios.post(`${BASE_API_URL}/images`, formData, {
         headers: {
-          'Content-Type': 'multipart/form-data'
-        }
+          "Content-Type": "multipart/form-data",
+        },
       });
     } catch (error) {
       error.response && dispatch(getErrors(error.response.data));
@@ -23,8 +23,8 @@ export const deleteImage = (id) => {
     try {
       await axios.delete(`${BASE_API_URL}/images/${id}`);
       dispatch({
-        type: 'DELETE_PHOTO',
-        payload: id
+        type: "DELETE_PHOTO",
+        payload: id,
       });
     } catch (error) {
       error.response && dispatch(getErrors(error.response.data));
@@ -44,6 +44,6 @@ export const startLoadPhotos = () => {
 };
 
 export const loadPhotos = (photos) => ({
-  type: 'LOAD_PHOTOS',
-  photos
+  type: "LOAD_PHOTOS",
+  photos,
 });

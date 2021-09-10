@@ -94,7 +94,15 @@ h2 {
   .close {
     position: absolute;
     right: 0;
+    margin: 0;
   }
+  
+  .name {
+    font-weight: bold;
+    text-align: center;
+    
+  }
+
   .photo {
     width: 28.8rem;
     overflow: hidden;
@@ -161,6 +169,17 @@ button {
   font-size: 200%;
   height: 20rem;
   line-height: 20rem;
+}
+
+.search-bar {
+  width: 200px;
+  margin: 0 auto;
+  
+  input {
+    border-radius: 10px;
+    border-width: 0px;
+    text-align: center;
+  }
 }
 
 /* ----- messages css ends here ----- */

@@ -1,9 +1,9 @@
-import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Header from './components/Header';
-import AddImage from './components/AddImage';
-import Gallery from './components/Gallery';
-import NotFoundPage from './components/NotFoundPage';
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Header from "./components/Header";
+import AddImage from "./components/AddImage";
+import Gallery from "./components/Gallery";
+import NotFoundPage from "./components/NotFoundPage";
 
 const AppRouter = () => (
   <BrowserRouter>

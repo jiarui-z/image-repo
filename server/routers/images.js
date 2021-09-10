@@ -1,5 +1,6 @@
 const express = require("express");
 const multer = require("multer");
+const path = require("path");
 const Image = require("../model/Image");
 const router = express.Router();
 
@@ -20,9 +21,10 @@ router.post(
   upload.single("image"),
   async (req, res) => {
     try {
-      const image = new Image(req.body);
+      const image = new Image();
       const file = req.file.buffer;
       image.content = file;
+      image.name = path.parse(req.file.originalname).name;
 
       await image.save();
       res.status(201).send({ _id: image._id });
