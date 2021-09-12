@@ -17,6 +17,7 @@ router.use(
   require("./privateImages")
 );
 
+// public routes
 router.post("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
 

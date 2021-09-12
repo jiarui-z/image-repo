@@ -6,6 +6,7 @@ const ImageSchema = new Schema({
   content: {
     type: Buffer,
   },
+  userId: Number,
 });
 
 ImageSchema.methods.toJSON = function () {

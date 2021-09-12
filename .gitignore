@@ -1,5 +1,5 @@
 # dependencies
 /server/node_modules
-/server/.env
-/server/.env
+/server/.env.dev
+/server/.env.test
 /client/node_modules
