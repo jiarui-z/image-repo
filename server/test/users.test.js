@@ -13,10 +13,10 @@ describe("users endpoints test", () => {
     await User.deleteMany({});
   });
 
-  afterAll((done) => {
+  afterAll(async () => {
     await User.deleteMany({});
     mongoose.connection.close();
-    server.close(done);
+    server.close();
   });
 
   it("cannot access private routes without jwt token", async () => {

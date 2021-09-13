@@ -13,10 +13,10 @@ describe("images endpoints test", () => {
     await Image.deleteMany({});
   });
 
-  afterAll((done) => {
+  afterAll(async () => {
     await Image.deleteMany({});
     mongoose.connection.close();
-    server.close(done);
+    server.close();
   });
 
   it("can get all images", async () => {
